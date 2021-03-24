@@ -1,0 +1,39 @@
+{
+  "name": "conducir",
+  "version": "1.0.0",
+  "description": "Examen de prueba y pregutas para examen de conducir.",
+  "author": "searchsam",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-node server/server.js",
+    "open:src": "babel-node server/server.js",
+    "clean-dist": "rimraf client/dist",
+    "prebuild": "npm-run-all clean-dist",
+    "build": "babel-node server/build.js",
+    "postbuild": "babel-node server/distServer.js",
+    "predeploy": "rimraf docs",
+    "deploy": "cp -r client/dist docs",
+    "postdeploy": "sh server/genin.sh"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.12",
+    "@babel/preset-env": "^7.13.12",
+    "@babel/register": "^7.13.8",
+    "babel-loader": "^8.2.2",
+    "cors": "^2.8.5",
+    "css-loader": "^5.1.3",
+    "express": "^4.17.1",
+    "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.3.9",
+    "open": "^8.0.4",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.27.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2",
+    "yarn-run-all": "^3.1.1"
+  }
+}
